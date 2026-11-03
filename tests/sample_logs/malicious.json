@@ -1,0 +1,10 @@
+[
+  {
+    "eventName": "StopLogging",
+    "eventTime": "2026-11-01T09:00:00Z",
+    "sourceIPAddress": "1.2.3.4",
+    "userIdentity": {
+      "arn": "arn:aws:iam::003720987747:user/sara-admin"
+    }
+  }
+]
