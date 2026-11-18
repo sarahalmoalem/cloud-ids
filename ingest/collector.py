@@ -10,6 +10,10 @@ RAW = "data/raw"
 
 
 def collect():
+    if not BUCKET or not PREFIX:
+    raise ValueError(
+        "TRAIL_BUCKET and TRAIL_PREFIX environment variables must be set."
+    )
     os.makedirs(RAW, exist_ok=True)
 
     if os.path.exists(STATE):
@@ -24,8 +28,9 @@ def collect():
     paginator = s3.get_paginator("list_objects_v2")
 
     for page in paginator.paginate(
-        Bucket=BUCKET,
-        Prefix=PREFIX
+        BUCKET = os.environ.get("TRAIL_BUCKET")
+        PREFIX = os.environ.get("TRAIL_PREFIX")
+
     ):
         for obj in page.get("Contents", []):
             key = obj["Key"]
