@@ -1,0 +1,16 @@
+.venv/
+
+__pycache__/
+*.pyc
+
+.env
+dashboard/.env
+
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/*.tfstate
+terraform/*.tfstate.backup
+
+data/raw/
+data/parquet/
+data/state.json
